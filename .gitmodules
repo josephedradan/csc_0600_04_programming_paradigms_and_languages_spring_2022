@@ -1,0 +1,12 @@
+[submodule "hw1-josephedradan"]
+	path = hw1-josephedradan
+	url = https://github.com/SFSU-CSC600-S22/hw1-josephedradan.git
+[submodule "hw2-josephedradan"]
+	path = hw2-josephedradan
+	url = https://github.com/SFSU-CSC600-S22/hw2-josephedradan.git
+[submodule "hw3-josephedradan"]
+	path = hw3-josephedradan
+	url = https://github.com/SFSU-CSC600-S22/hw3-josephedradan.git
+[submodule "midterm-josephedradan"]
+	path = midterm-josephedradan
+	url = https://github.com/SFSU-CSC600-S22/midterm-josephedradan.git
