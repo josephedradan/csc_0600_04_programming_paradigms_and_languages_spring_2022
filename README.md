@@ -1,0 +1,1 @@
+# All my solutions for csc_0600_04_programming_paradigms_and_languages_spring_2022
