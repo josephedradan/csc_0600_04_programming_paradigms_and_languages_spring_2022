@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "lib": ["es2019", "dom"],
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true
+  }
+}

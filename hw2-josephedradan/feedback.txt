@@ -1,0 +1,151 @@
+Problem 1a:
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => x > 1
+    expected: {"type":"NUMBER","entries":[{"id":1,"data":2},{"id":2,"data":3}]}
+    actual: {"type":"NUMBER","entries":[{"id":1,"data":2},{"id":2,"data":3}]}
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => x === 2
+    expected: {"type":"NUMBER","entries":[{"id":1,"data":2}]}
+    actual: {"type":"NUMBER","entries":[{"id":1,"data":2}]}
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => x < 0
+    expected: {"type":"NUMBER","entries":[]}
+    actual: {"type":"NUMBER","entries":[]}
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => x === 1
+    expected: {"type":"NUMBER","entries":[{"id":0,"data":1}]}
+    actual: {"type":"NUMBER","entries":[{"id":0,"data":1}]}
+    Points for problem: 10 out of 10
+
+Problem 1b:
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, [1]
+    expected: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":2,"data":3}]}
+    actual: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":2,"data":3}]}
+    input: {"type":"STRING","entries":[{"id":0,"data":"csc600"},{"id":1,"data":"is"},{"id":2,"data":"fun"}]}, [0,1]
+    expected: {"type":"STRING","entries":[{"id":2,"data":"fun"}]}
+    actual: {"type":"STRING","entries":[{"id":2,"data":"fun"}]}
+    input: {"type":"STRING","entries":[{"id":0,"data":"csc600"},{"id":1,"data":"is"},{"id":2,"data":"fun"}]}, [0,1,2]
+    expected: {"type":"STRING","entries":[]}
+    actual: {"type":"STRING","entries":[]}
+    input: {"type":"ANY","entries":[{"id":"a","data":{"hour":10,"min":20}},{"id":"b","data":{"hour":10,"min":30}},{"id":"c","data":{"hour":9,"min":40}}]}, ["c","a"]
+    expected: {"type":"ANY","entries":[{"id":"b","data":{"hour":10,"min":30}}]}
+    actual: {"type":"ANY","entries":[{"id":"b","data":{"hour":10,"min":30}}]}
+    input: {"type":"ANY","entries":[{"id":0,"data":{"cont":"one one"}},{"id":1,"data":{"cont":12}},{"id":2,"data":{"cont":144}},{"id":3,"data":{"cont":"three six"}},{"id":4,"data":{"cont":100}}]}, [3,4]
+    expected: {"type":"ANY","entries":[{"id":0,"data":{"cont":"one one"}},{"id":1,"data":{"cont":12}},{"id":2,"data":{"cont":144}}]}
+    actual: {"type":"ANY","entries":[{"id":0,"data":{"cont":"one one"}},{"id":1,"data":{"cont":12}},{"id":2,"data":{"cont":144}}]}
+    Points for problem: 10 out of 10
+
+Problem 1c:
+    input: "NUMBER", []
+    expected: "NUMBER"
+    actual: "NUMBER"
+    input: "STRING", []
+    expected: "STRING"
+    actual: "STRING"
+    input: "NUMBER", [1,2,3]
+    expected: "NUMBER"
+    actual: "NUMBER"
+    input: "STRING", ["csc600","is","fun"]
+    expected: "STRING"
+    actual: "STRING"
+    input: "NUMBER", [{"x":"csc600"},{"x":"is"},{"x":"fun"}]
+    expected: "ANY"
+    actual: "ANY"
+    Points for problem: 10 out of 10
+
+Problem 1d:
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => x + 1
+    expected: {"type":"NUMBER","entries":[{"id":0,"data":2},{"id":1,"data":3},{"id":2,"data":4}]}
+    actual: {"type":"NUMBER","entries":[{"id":0,"data":2},{"id":1,"data":3},{"id":2,"data":4}]}
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => x + "foo"
+    expected: {"type":"STRING","entries":[{"id":0,"data":"1foo"},{"id":1,"data":"2foo"},{"id":2,"data":"3foo"}]}
+    actual: {"type":"STRING","entries":[{"id":0,"data":"1foo"},{"id":1,"data":"2foo"},{"id":2,"data":"3foo"}]}
+    input: {"type":"NUMBER","entries":[{"id":0,"data":1},{"id":1,"data":2},{"id":2,"data":3}]}, (x) => ({ x: 'x' })
+    expected: {"type":"ANY","entries":[{"id":0,"data":{"x":"x"}},{"id":1,"data":{"x":"x"}},{"id":2,"data":{"x":"x"}}]}
+    actual: {"type":"ANY","entries":[{"id":0,"data":{"x":"x"}},{"id":1,"data":{"x":"x"}},{"id":2,"data":{"x":"x"}}]}
+    input: {"type":"STRING","entries":[{"id":0,"data":"csc600"},{"id":1,"data":"is"},{"id":2,"data":"fun"}]}, (x) => "test4" + x
+    expected: {"type":"STRING","entries":[{"id":0,"data":"test4csc600"},{"id":1,"data":"test4is"},{"id":2,"data":"test4fun"}]}
+    actual: {"type":"STRING","entries":[{"id":0,"data":"test4csc600"},{"id":1,"data":"test4is"},{"id":2,"data":"test4fun"}]}
+    Points for problem: 10 out of 10
+
+Problem 2a:
+    input: {"indices":[0,1],"column1":{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},"column2":{"name":"rating","type":"NUMBER","data":[5,1]}}, "courseid"
+    expected: {"type":"STRING","entries":[{"id":0,"data":"CSC600"},{"id":1,"data":"CSC601"}]}
+    actual: {"type":"STRING","entries":[{"id":0,"data":"CSC600"},{"id":1,"data":"CSC601"}]}
+    input: {"indices":[0,1],"column1":{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},"column2":{"name":"rating","type":"NUMBER","data":[5,1]}}, "rating"
+    expected: {"type":"NUMBER","entries":[{"id":0,"data":5},{"id":1,"data":1}]}
+    actual: {"type":"NUMBER","entries":[{"id":0,"data":5},{"id":1,"data":1}]}
+    input: {"indices":[0,1],"column1":{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},"column2":{"name":"rating","type":"NUMBER","data":[5,1]}}, 
+    expected: undefined
+    actual: undefined
+    input: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[1,2,3,4]},"column2":{"name":"units","type":"STRING","data":["cans","bags","whole","whole"]}}, "units"
+    expected: {"type":"STRING","entries":[{"id":"beans","data":"cans"},{"id":"rice","data":"bags"},{"id":"chicken","data":"whole"},{"id":"steak","data":"whole"}]}
+    actual: {"type":"STRING","entries":[{"id":"beans","data":"cans"},{"id":"rice","data":"bags"},{"id":"chicken","data":"whole"},{"id":"steak","data":"whole"}]}
+    Points for problem: 10 out of 10
+
+Problem 2b:
+    input: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[1,2,3,4]},"column2":{"name":"units","type":"STRING","data":["cans","bags","whole","whole"]}}, (x) => [x[0], x[1]]
+    expected: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[1,2,3,4]},"column2":{"name":"units","type":"STRING","data":["cans","bags","whole","whole"]}}
+    actual: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[1,2,3,4]},"column2":{"name":"units","type":"STRING","data":["cans","bags","whole","whole"]}}
+    input: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[1,2,3,4]},"column2":{"name":"units","type":"STRING","data":["cans","bags","whole","whole"]}}, (x) => [x[0] + 1, "foo" + x[1]]
+    expected: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[2,3,4,5]},"column2":{"name":"units","type":"STRING","data":["foocans","foobags","foowhole","foowhole"]}}
+    actual: {"indices":["beans","rice","chicken","steak"],"column1":{"name":"inventory","type":"NUMBER","data":[2,3,4,5]},"column2":{"name":"units","type":"STRING","data":["foocans","foobags","foowhole","foowhole"]}}
+    Points for problem: 15 out of 15
+
+Problem 3a:
+    input: {"indices":[0,1,2,3],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601","CSC602","CSC603"]},{"name":"rating","type":"NUMBER","data":[5,1,2,3]}]}
+    expected: true
+    actual: true
+    input: {"indices":[0,1,2,3],"columns":[{"name":"courseid","type":"NUMBER","data":["CSC600","CSC601","CSC602","CSC603"]},{"name":"rating","type":"NUMBER","data":[5,1,2,3]}]}
+    expected: false
+    actual: false
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]}]}
+    expected: true
+    actual: true
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]}]}
+    expected: true
+    actual: true
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"ANY","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]}]}
+    expected: false
+    actual: false
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]}]}
+    expected: true
+    actual: true
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"sections","type":"STRING","data":[2,2]}]}
+    expected: false
+    actual: false
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"sections","type":"STRING","data":[2,2]},{"name":"students","type":"STRING","data":[["jane","john"],["jill","joe"]]}]}
+    expected: false
+    actual: false
+    Points for problem: 10 out of 10
+
+Problem 3b:
+    input: {"indices":[0,1,2,3,4],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601","CSC603","CSC604","CSC605"]}]}, (row) => [row[0] + "123"]
+    expected: {"indices":[0,1,2,3,4],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]}]}
+    actual: {"indices":[0,1,2,3,4],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]}]}
+    input: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601","CSC603","CSC604","CSC605"]}]}, (row) => [row[0] + "123"]
+    expected: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]}]}
+    actual: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]}]}
+    input: {"indices":[1,2,3,4,5,6],"columns":[{"name":"rating","type":"NUMBER","data":[5,1,2,3,4,10]}]}, (row) => [row[0] * 2]
+    expected: {"indices":[1,2,3,4,5,6],"columns":[{"name":"rating","type":"NUMBER","data":[10,2,4,6,8,20]}]}
+    actual: {"indices":[1,2,3,4,5,6],"columns":[{"name":"rating","type":"NUMBER","data":[10,2,4,6,8,20]}]}
+    input: {"indices":["a","b","c"],"columns":[{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"],["joanne","jake"]]}]}, (row) => [row[0].length]
+    expected: {"indices":["a","b","c"],"columns":[{"name":"students","type":"NUMBER","data":[2,2,2]}]}
+    actual: {"indices":["a","b","c"],"columns":[{"name":"students","type":"NUMBER","data":[2,2,2]}]}
+    input: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601","CSC603","CSC604","CSC605"]},{"name":"rating","type":"NUMBER","data":[5,1,2,3,4]}]}, (row) => [row[0] + "123", row[1] * 2]
+    expected: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]},{"name":"rating","type":"NUMBER","data":[10,2,4,6,8]}]}
+    actual: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]},{"name":"rating","type":"NUMBER","data":[10,2,4,6,8]}]}
+    input: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601","CSC603","CSC604","CSC605"]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"],["joanne","jake"],["kate","kevin"],["brenda","bill"]]}]}, (row) => [row[0] + "123", row[1]]
+    expected: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"],["joanne","jake"],["kate","kevin"],["brenda","bill"]]}]}
+    actual: {"indices":[-1,-2,-3,-4,-5],"columns":[{"name":"courseid","type":"STRING","data":["CSC600123","CSC601123","CSC603123","CSC604123","CSC605123"]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"],["joanne","jake"],["kate","kevin"],["brenda","bill"]]}]}
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]}]}, (row) => [row[0], row[1], row[2]]
+    expected: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]}]}
+    actual: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]}]}
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]}]}, (row) => [row[0] + "!", row[1] + "?", row[2].map((x) => x.toUpperCase())]
+    expected: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600!","CSC601!"]},{"name":"rating","type":"STRING","data":["5?","1?"]},{"name":"students","type":"ANY","data":[["JANE","JOHN"],["JILL","JOE"]]}]}
+    actual: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600!","CSC601!"]},{"name":"rating","type":"STRING","data":["5?","1?"]},{"name":"students","type":"ANY","data":[["JANE","JOHN"],["JILL","JOE"]]}]}
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]},{"name":"hasMidterm","type":"STRING","data":["yes","yes"]}]}, (row) => [row[0] + "!", row[1] + "?", row[2].map((x) => x.toUpperCase()), row[3] + "!"]
+    expected: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600!","CSC601!"]},{"name":"rating","type":"STRING","data":["5?","1?"]},{"name":"students","type":"ANY","data":[["JANE","JOHN"],["JILL","JOE"]]},{"name":"hasMidterm","type":"STRING","data":["yes!","yes!"]}]}
+    actual: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600!","CSC601!"]},{"name":"rating","type":"STRING","data":["5?","1?"]},{"name":"students","type":"ANY","data":[["JANE","JOHN"],["JILL","JOE"]]},{"name":"hasMidterm","type":"STRING","data":["yes!","yes!"]}]}
+    input: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600","CSC601"]},{"name":"rating","type":"NUMBER","data":[5,1]},{"name":"students","type":"ANY","data":[["jane","john"],["jill","joe"]]},{"name":"hasMidterm","type":"STRING","data":["yes","yes"]},{"name":"sections","type":"NUMBER","data":[2,1]}]}, (row) => [row[0] + "!", row[1] + "?", row[2].map((x) => x.toUpperCase()), row[3] + "!", row[4]]
+    expected: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600!","CSC601!"]},{"name":"rating","type":"STRING","data":["5?","1?"]},{"name":"students","type":"ANY","data":[["JANE","JOHN"],["JILL","JOE"]]},{"name":"hasMidterm","type":"STRING","data":["yes!","yes!"]},{"name":"sections","type":"NUMBER","data":[2,1]}]}
+    actual: {"indices":[0,1],"columns":[{"name":"courseid","type":"STRING","data":["CSC600!","CSC601!"]},{"name":"rating","type":"STRING","data":["5?","1?"]},{"name":"students","type":"ANY","data":[["JANE","JOHN"],["JILL","JOE"]]},{"name":"hasMidterm","type":"STRING","data":["yes!","yes!"]},{"name":"sections","type":"NUMBER","data":[2,1]}]}
+    Points for problem: 25 out of 25
+
+Total score: 100 of 100, or 100%

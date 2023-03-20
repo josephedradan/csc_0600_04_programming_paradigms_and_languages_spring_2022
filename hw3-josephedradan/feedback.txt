@@ -1,0 +1,172 @@
+Problem 1a:
+    input: []
+    expected: [[],[]]
+    actual: [[],[]]
+    input: ["a"]
+    expected: [["a"],[]]
+    actual: [["a"],[]]
+    input: ["a","b"]
+    expected: [["a"],["b"]]
+    actual: [["a"],["b"]]
+    input: ["a","b","c"]
+    expected: [["a","b"],["c"]]
+    actual: [["a","b"],["c"]]
+    input: ["a","b","c","d"]
+    expected: [["a","b"],["c","d"]]
+    actual: [["a","b"],["c","d"]]
+    input: ["a","b","c","d","e"]
+    expected: [["a","b","c"],["d","e"]]
+    actual: [["a","b","c"],["d","e"]]
+    input: ["a","b","c","d","e","f"]
+    expected: [["a","b","c"],["d","e","f"]]
+    actual: [["a","b","c"],["d","e","f"]]
+    input: ["a","b","c","d","e","f","g"]
+    expected: [["a","b","c","d"],["e","f","g"]]
+    actual: [["a","b","c","d"],["e","f","g"]]
+    input: ["a","b","c","d","e","f","g","h"]
+    expected: [["a","b","c","d"],["e","f","g","h"]]
+    actual: [["a","b","c","d"],["e","f","g","h"]]
+    input: [1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2]
+    expected: [[1,1,1,1,1,1,1,1,1,1],[2,2,2,2,2,2,2,2,2,2]]
+    actual: [[1,1,1,1,1,1,1,1,1,1],[2,2,2,2,2,2,2,2,2,2]]
+    Points for problem: 10 out of 10
+
+Problem 1b:
+    input: []
+    expected: [[[],[]],[[],[]]]
+    actual: [[[],[]],[[],[]]]
+    input: ["a"]
+    expected: [[["a"],[]],[[],[]]]
+    actual: [[["a"],[]],[[],[]]]
+    input: ["a","b"]
+    expected: [[["a"],[]],[["b"],[]]]
+    actual: [[["a"],[]],[["b"],[]]]
+    input: ["a","b","c"]
+    expected: [[["a"],["b"]],[["c"],[]]]
+    actual: [[["a"],["b"]],[["c"],[]]]
+    input: ["a","b","c","d"]
+    expected: [[["a"],["b"]],[["c"],["d"]]]
+    actual: [[["a"],["b"]],[["c"],["d"]]]
+    input: ["a","b","c","d","e"]
+    expected: [[["a","b"],["c"]],[["d"],["e"]]]
+    actual: [[["a","b"],["c"]],[["d"],["e"]]]
+    input: ["a","b","c","d","e","f"]
+    expected: [[["a","b"],["c"]],[["d","e"],["f"]]]
+    actual: [[["a","b"],["c"]],[["d","e"],["f"]]]
+    input: ["a","b","c","d","e","f","g"]
+    expected: [[["a","b"],["c","d"]],[["e","f"],["g"]]]
+    actual: [[["a","b"],["c","d"]],[["e","f"],["g"]]]
+    input: ["a","b","c","d","e","f","g","h"]
+    expected: [[["a","b"],["c","d"]],[["e","f"],["g","h"]]]
+    actual: [[["a","b"],["c","d"]],[["e","f"],["g","h"]]]
+    input: [1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4]
+    expected: [[[1,1,1,1,1],[2,2,2,2,2]],[[3,3,3,3,3],[4,4,4,4,4]]]
+    actual: [[[1,1,1,1,1],[2,2,2,2,2]],[[3,3,3,3,3],[4,4,4,4,4]]]
+    Points for problem: 10 out of 10
+
+Problem 2:
+    input: []
+    expected: {"tag":"LEAF"}
+    actual: {"tag":"LEAF"}
+    input: [42]
+    expected: {"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}
+    actual: {"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}
+    input: [42,13]
+    expected: {"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":13,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}
+    actual: {"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":13,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}
+    input: [42,13,24]
+    expected: {"tag":"NODE","contents":13,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":24,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}
+    actual: {"tag":"NODE","contents":13,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":24,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}
+    input: [42,13,24,3]
+    expected: {"tag":"NODE","contents":13,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":24,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    actual: {"tag":"NODE","contents":13,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":24,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    input: [42,13,24,3,-12]
+    expected: {"tag":"NODE","contents":24,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":13,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":-12,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    actual: {"tag":"NODE","contents":24,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":13,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":-12,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    input: [42,13,24,3,-12,48]
+    expected: {"tag":"NODE","contents":24,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":13,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":-12,"left":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":48,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    actual: {"tag":"NODE","contents":24,"left":{"tag":"NODE","contents":42,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":13,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":-12,"left":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":48,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    input: [1,2,4,8,16,32,64,128,256,512,1024,2048]
+    expected: {"tag":"NODE","contents":32,"left":{"tag":"NODE","contents":4,"left":{"tag":"NODE","contents":1,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":2,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":8,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":16,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}},"right":{"tag":"NODE","contents":256,"left":{"tag":"NODE","contents":64,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":128,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":1024,"left":{"tag":"NODE","contents":512,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":2048,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}}
+    actual: {"tag":"NODE","contents":32,"left":{"tag":"NODE","contents":4,"left":{"tag":"NODE","contents":1,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":2,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":8,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":16,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}},"right":{"tag":"NODE","contents":256,"left":{"tag":"NODE","contents":64,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":128,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":1024,"left":{"tag":"NODE","contents":512,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":2048,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}}
+    input: ["42","13","24","3","-12","48"]
+    expected: {"tag":"NODE","contents":"24","left":{"tag":"NODE","contents":"42","left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":"13","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":"-12","left":{"tag":"NODE","contents":"3","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":"48","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    actual: {"tag":"NODE","contents":"24","left":{"tag":"NODE","contents":"42","left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":"13","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":"-12","left":{"tag":"NODE","contents":"3","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":"48","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    input: [[42],[13],[24],[3],[-12],[48]]
+    expected: {"tag":"NODE","contents":[24],"left":{"tag":"NODE","contents":[42],"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":[13],"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":[-12],"left":{"tag":"NODE","contents":[3],"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":[48],"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    actual: {"tag":"NODE","contents":[24],"left":{"tag":"NODE","contents":[42],"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":[13],"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":[-12],"left":{"tag":"NODE","contents":[3],"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":[48],"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    Points for problem: 25 out of 25
+
+Problem 3a:
+    input: {"tag":"LEAF"}
+    expected: 0
+    actual: 0
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]}
+    expected: 1
+    actual: 1
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}
+    expected: 2
+    actual: 2
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}
+    expected: 2
+    actual: 2
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":5,"firstChild":{"tag":"NODE","contents":6,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}
+    expected: 4
+    actual: 4
+    Points for problem: 15 out of 15
+
+Problem 3b:
+    input: {"tag":"LEAF"}, 
+    expected: {"tag":"LEAF"}
+    actual: {"tag":"LEAF"}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]}, 
+    expected: {"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]}
+    actual: {"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}, 
+    expected: {"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}
+    actual: {"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}, 
+    expected: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}
+    actual: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":5,"firstChild":{"tag":"NODE","contents":6,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}, 
+    expected: {"tag":"NODE","contents":3,"firstChild":{"tag":"NODE","contents":4,"firstChild":{"tag":"NODE","contents":5,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":6,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":7,"firstChild":{"tag":"NODE","contents":8,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}
+    actual: {"tag":"NODE","contents":3,"firstChild":{"tag":"NODE","contents":4,"firstChild":{"tag":"NODE","contents":5,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":6,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":7,"firstChild":{"tag":"NODE","contents":8,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":5,"firstChild":{"tag":"NODE","contents":6,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}, 
+    expected: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":0,"firstChild":{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":0,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":0,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}
+    actual: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":0,"firstChild":{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":0,"firstChild":{"tag":"LEAF"},"restChildren":[]},{"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":0,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}]},"restChildren":[]}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}, 
+    expected: {"tag":"NODE","contents":17,"firstChild":{"tag":"NODE","contents":19,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":21,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}
+    actual: {"tag":"NODE","contents":17,"firstChild":{"tag":"NODE","contents":19,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[{"tag":"NODE","contents":21,"firstChild":{"tag":"LEAF"},"restChildren":[]}]}
+    input: {"tag":"NODE","contents":1,"firstChild":{"tag":"NODE","contents":2,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}, 
+    expected: {"tag":"NODE","contents":5,"firstChild":{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}
+    actual: {"tag":"NODE","contents":5,"firstChild":{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[]},"restChildren":[]}
+    Points for problem: 20 out of 20
+
+Problem 3c:
+    input: {"tag":"LEAF"}
+    expected: {"tag":"LEAF"}
+    actual: {"tag":"LEAF"}
+    input: {"tag":"NODE","contents":1,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}
+    expected: {"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}
+    actual: {"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}
+    input: {"tag":"NODE","contents":"hello","left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":"world","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}
+    expected: {"tag":"NODE","contents":"hello","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":"world","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}
+    actual: {"tag":"NODE","contents":"hello","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":"world","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}
+    input: {"tag":"NODE","contents":"is","left":{"tag":"NODE","contents":"csc600","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":"fun","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}
+    expected: {"tag":"NODE","contents":"is","firstChild":{"tag":"NODE","contents":"csc600","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":"fun","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}
+    actual: {"tag":"NODE","contents":"is","firstChild":{"tag":"NODE","contents":"csc600","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":"fun","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}
+    input: {"tag":"NODE","contents":2,"left":{"tag":"NODE","contents":3,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":1,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":4,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    expected: {"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}
+    actual: {"tag":"NODE","contents":2,"firstChild":{"tag":"NODE","contents":3,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":4,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}
+    input: {"tag":"NODE","contents":7,"left":{"tag":"NODE","contents":5,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":1,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":10,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":22,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    expected: {"tag":"NODE","contents":7,"firstChild":{"tag":"NODE","contents":5,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]},"restChildren":[{"tag":"NODE","contents":10,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":22,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}
+    actual: {"tag":"NODE","contents":7,"firstChild":{"tag":"NODE","contents":5,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":1,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]},"restChildren":[{"tag":"NODE","contents":10,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":22,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}
+    input: {"tag":"NODE","contents":"like","left":{"tag":"NODE","contents":"I","left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":"really","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}},"right":{"tag":"NODE","contents":"and","left":{"tag":"NODE","contents":"burgers","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":"fries","left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}
+    expected: {"tag":"NODE","contents":"like","firstChild":{"tag":"NODE","contents":"I","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":"really","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]},"restChildren":[{"tag":"NODE","contents":"and","firstChild":{"tag":"NODE","contents":"burgers","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":"fries","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}
+    actual: {"tag":"NODE","contents":"like","firstChild":{"tag":"NODE","contents":"I","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":"really","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]},"restChildren":[{"tag":"NODE","contents":"and","firstChild":{"tag":"NODE","contents":"burgers","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":"fries","firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}
+    input: {"tag":"NODE","contents":500,"left":{"tag":"NODE","contents":200,"left":{"tag":"NODE","contents":100,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":300,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":400,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}},"right":{"tag":"NODE","contents":700,"left":{"tag":"NODE","contents":600,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}},"right":{"tag":"NODE","contents":800,"left":{"tag":"LEAF"},"right":{"tag":"NODE","contents":900,"left":{"tag":"LEAF"},"right":{"tag":"LEAF"}}}}}
+    expected: {"tag":"NODE","contents":500,"firstChild":{"tag":"NODE","contents":200,"firstChild":{"tag":"NODE","contents":100,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":300,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":400,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]},"restChildren":[{"tag":"NODE","contents":700,"firstChild":{"tag":"NODE","contents":600,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":800,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":900,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}]}
+    actual: {"tag":"NODE","contents":500,"firstChild":{"tag":"NODE","contents":200,"firstChild":{"tag":"NODE","contents":100,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":300,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":400,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]},"restChildren":[{"tag":"NODE","contents":700,"firstChild":{"tag":"NODE","contents":600,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]},"restChildren":[{"tag":"NODE","contents":800,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"NODE","contents":900,"firstChild":{"tag":"LEAF"},"restChildren":[{"tag":"LEAF"}]}]}]}]}
+    Points for problem: 20 out of 20
+
+Total score: 100 of 100, or 100%

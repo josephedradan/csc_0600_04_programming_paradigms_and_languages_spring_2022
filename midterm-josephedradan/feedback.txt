@@ -1,0 +1,193 @@
+Problem 1a:
+    input: {"tag":"CUBE","name":"movies"}
+    expected: "movies"
+    actual: "movies"
+    input: {"tag":"RECTANGLE","name":"books"}
+    expected: "books"
+    actual: "books"
+    input: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    expected: "media"
+    actual: "media"
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    expected: "kitchenware"
+    actual: "kitchenware"
+    input: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}
+    expected: "clothes"
+    actual: "clothes"
+    input: {"tag":"BUNDLE","name":"mystuff","containers":[{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]}
+    expected: "mystuff"
+    actual: "mystuff"
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    expected: "cabinet"
+    actual: "cabinet"
+    Points for problem: 5 out of 5
+
+Problem 1b:
+    input: []
+    expected: []
+    actual: []
+    input: [{"tag":"CUBE","name":"movies"}]
+    expected: ["movies"]
+    actual: ["movies"]
+    input: [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]
+    expected: ["movies","books"]
+    actual: ["movies","books"]
+    input: [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}]
+    expected: ["movies","books","media"]
+    actual: ["movies","books","media"]
+    input: [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}]
+    expected: ["movies","books","media","kitchenware"]
+    actual: ["movies","books","media","kitchenware"]
+    input: [{"tag":"BUNDLE","name":"mystuff","containers":[{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]}]
+    expected: ["mystuff"]
+    actual: ["mystuff"]
+    input: [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]},{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}]
+    expected: ["movies","books","media","kitchenware","cabinet"]
+    actual: ["movies","books","cabinet","media","kitchenware"]
+    Points for problem: 10 out of 10
+
+Problem 1c:
+    input: "anything", []
+    expected: undefined
+    actual: undefined
+    input: "movies", [{"tag":"CUBE","name":"movies"}]
+    expected: {"tag":"CUBE","name":"movies"}
+    actual: {"tag":"CUBE","name":"movies"}
+    input: "books", [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]
+    expected: {"tag":"RECTANGLE","name":"books"}
+    actual: {"tag":"RECTANGLE","name":"books"}
+    input: "media", [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}]
+    expected: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    actual: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    input: "cookware", [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]
+    expected: undefined
+    actual: undefined
+    input: "cookware", [{"tag":"BUNDLE","name":"mystuff","containers":[{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]}]
+    expected: undefined
+    actual: undefined
+    input: "cabinet", [{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]
+    expected: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    actual: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    Points for problem: 10 out of 10
+
+Problem 2a:
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}, "cookware"
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}, "silverware"
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]}]}
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}, "media"
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}, "pots"
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    input: {"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]}, "pots"
+    expected: {"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pans"}]}
+    actual: {"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pans"}]}
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}, "chocolate"
+    expected: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"}]}
+    actual: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"}]}
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}, "salt"
+    expected: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    actual: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    Points for problem: 15 out of 15
+
+Problem 2b:
+    input: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}, "shirts", "RECTANGLE"
+    expected: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}
+    actual: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}
+    input: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}, "coats", "RECTANGLE"
+    expected: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"},{"tag":"RECTANGLE","name":"coats"}]}
+    actual: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"},{"tag":"RECTANGLE","name":"coats"}]}
+    input: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}, "coats", "BUNDLE"
+    expected: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"},{"tag":"BUNDLE","name":"coats","containers":[]}]}
+    actual: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"},{"tag":"BUNDLE","name":"coats","containers":[]}]}
+    input: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}, "games", "CUBE"
+    expected: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"CUBE","name":"games"}]}
+    actual: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"CUBE","name":"games"}]}
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}, "msg", "CUBE"
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]},{"tag":"CUBE","name":"msg"}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]},{"tag":"CUBE","name":"msg"}]}
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}, "lemon", "RECTANGLE"
+    expected: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"},{"tag":"RECTANGLE","name":"lemon"}]}
+    actual: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"},{"tag":"RECTANGLE","name":"lemon"}]}
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}, "chicken", "BUNDLE"
+    expected: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"},{"tag":"BUNDLE","name":"chicken","containers":[]}]}
+    actual: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"},{"tag":"BUNDLE","name":"chicken","containers":[]}]}
+    Points for problem: 15 out of 15
+
+Problem 3a:
+    input: {"tag":"CUBE","name":"movies"}
+    expected: 100
+    actual: 100
+    input: {"tag":"RECTANGLE","name":"books"}
+    expected: 50
+    actual: 50
+    input: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    expected: 150
+    actual: 150
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    expected: 300
+    actual: 300
+    input: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}
+    expected: 300
+    actual: 300
+    input: {"tag":"BUNDLE","name":"mystuff","containers":[{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]}
+    expected: 750
+    actual: 750
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    expected: 250
+    actual: 250
+    input: {"tag":"BUNDLE","name":"dresser","containers":[{"tag":"CUBE","name":"jogger"},{"tag":"CUBE","name":"sweats"},{"tag":"BUNDLE","name":"tops","containers":[{"tag":"RECTANGLE","name":"graphic t-shirt"},{"tag":"RECTANGLE","name":"long sleeve"},{"tag":"RECTANGLE","name":"hoodie"}]}]}
+    expected: 350
+    actual: 350
+    Points for problem: 20 out of 20
+
+Problem 3b:
+    input: {"tag":"CUBE","name":"movies"}
+    expected: ["movies"]
+    actual: ["movies"]
+    input: {"tag":"RECTANGLE","name":"books"}
+    expected: ["books"]
+    actual: ["books"]
+    input: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    expected: ["media","movies","books"]
+    actual: ["media","movies","books"]
+    input: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    expected: ["kitchenware","cookware","pots","pans","silverware","forks","knives"]
+    actual: ["kitchenware","cookware","pots","pans","silverware","forks","knives"]
+    input: {"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}
+    expected: ["clothes","pants","shirts","socks"]
+    actual: ["clothes","pants","shirts","socks"]
+    input: {"tag":"BUNDLE","name":"cabinet","containers":[{"tag":"CUBE","name":"sugar"},{"tag":"CUBE","name":"salt"},{"tag":"RECTANGLE","name":"chocolate"}]}
+    expected: ["cabinet","sugar","salt","chocolate"]
+    actual: ["cabinet","sugar","salt","chocolate"]
+    input: {"tag":"BUNDLE","name":"dresser","containers":[{"tag":"CUBE","name":"jogger"},{"tag":"CUBE","name":"sweats"},{"tag":"BUNDLE","name":"tops","containers":[{"tag":"RECTANGLE","name":"graphic t-shirt"},{"tag":"RECTANGLE","name":"long sleeve"},{"tag":"RECTANGLE","name":"hoodie"}]}]}
+    expected: ["dresser","jogger","sweats","tops","graphic t-shirt","long sleeve","hoodie"]
+    actual: ["dresser","jogger","sweats","tops","graphic t-shirt","long sleeve","hoodie"]
+    input: {"tag":"BUNDLE","name":"mystuff","containers":[{"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]},{"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]},{"tag":"BUNDLE","name":"clothes","containers":[{"tag":"CUBE","name":"pants"},{"tag":"CUBE","name":"shirts"},{"tag":"CUBE","name":"socks"}]}]}
+    expected: ["mystuff","media","movies","books","kitchenware","cookware","pots","pans","silverware","forks","knives","clothes","pants","shirts","socks"]
+    actual: ["mystuff","media","movies","books","kitchenware","cookware","pots","pans","silverware","forks","knives","clothes","pants","shirts","socks"]
+    Points for problem: 25 out of 25
+
+Bonus Problem:
+    input: ["media"], {"tag":"CUBE","name":"squidGame"}, {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    expected: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"CUBE","name":"squidGame"}]}
+    actual: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"},{"tag":"CUBE","name":"squidGame"}]}
+    input: [], {"tag":"CUBE","name":"squidGame"}, {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    expected: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    actual: {"tag":"BUNDLE","name":"media","containers":[{"tag":"CUBE","name":"movies"},{"tag":"RECTANGLE","name":"books"}]}
+    input: ["kitchenware","silverware"], {"tag":"CUBE","name":"spoons"}, {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"},{"tag":"CUBE","name":"spoons"}]},{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"},{"tag":"CUBE","name":"spoons"}]}]}
+    input: ["kitchenware","foobar"], {"tag":"CUBE","name":"spoons"}, {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    input: ["kitchenware","silverware"], {"tag":"CUBE","name":"forks"}, {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    expected: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    actual: {"tag":"BUNDLE","name":"kitchenware","containers":[{"tag":"BUNDLE","name":"cookware","containers":[{"tag":"RECTANGLE","name":"pots"},{"tag":"RECTANGLE","name":"pans"}]},{"tag":"BUNDLE","name":"silverware","containers":[{"tag":"CUBE","name":"forks"},{"tag":"CUBE","name":"knives"}]}]}
+    Points for problem: 30 out of 30
+
+Total score: 130 of 100, or 130%

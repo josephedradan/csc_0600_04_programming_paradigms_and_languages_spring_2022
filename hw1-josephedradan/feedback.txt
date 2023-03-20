@@ -1,0 +1,186 @@
+Problem 1a:
+    input: []
+    expected: 0
+    actual: 0
+    input: [1,2,3]
+    expected: 6
+    actual: 6
+    input: [-1,-2,3,10]
+    expected: 10
+    actual: 10
+    Points for problem: 8 out of 8
+
+Problem 1b:
+    input: []
+    expected: -Infinity
+    actual: -Infinity
+    input: [1,2,3]
+    expected: 1
+    actual: 1
+    input: [-1,-2,3,10]
+    expected: -2
+    actual: -2
+    Points for problem: 8 out of 8
+
+Problem 1c:
+    input: []
+    expected: 
+    actual: 
+    input: ["hello","world"]
+    expected: helloworld
+    actual: helloworld
+    input: ["csc600","is","fun"]
+    expected: csc600isfun
+    actual: csc600isfun
+    Points for problem: 8 out of 8
+
+Problem 1d:
+    input: []
+    expected: 
+    actual: 
+    input: ["hello","world"]
+    expected: worldhello
+    actual: worldhello
+    input: ["csc600","is","fun"]
+    expected: funiscsc600
+    actual: funiscsc600
+    Points for problem: 8 out of 8
+
+Problem 1e:
+    input: []
+    expected: ,
+    actual: ,
+    input: ["hello","world"]
+    expected: helloworld,worldhello
+    actual: helloworld,worldhello
+    input: ["csc600","is","fun"]
+    expected: csc600isfun,funiscsc600
+    actual: csc600isfun,funiscsc600
+    Points for problem: 8 out of 8
+
+Problem 2a:
+    input: []
+    input after: []
+    expected input after: []
+    expected output: undefined
+    actual output: undefined
+    input: [1,2,3]
+    input after: [2,3,4]
+    expected input after: [2,3,4]
+    expected output: undefined
+    actual output: undefined
+    input: [2,3,4]
+    input after: [3,4,5]
+    expected input after: [3,4,5]
+    expected output: undefined
+    actual output: undefined
+    input: [3,4,5]
+    input after: [4,5,6]
+    expected input after: [4,5,6]
+    expected output: undefined
+    actual output: undefined
+    Points for problem: 10 out of 10
+
+Problem 2b:
+    input: []
+    expected: []
+    actual: []
+    input: [1,2,3]
+    expected: [1,2,3]
+    actual: [1,2,3]
+    input: [2,3,4]
+    expected: [2,3,4]
+    actual: [2,3,4]
+    input: [3,4,5]
+    expected: [3,4,5]
+    actual: [3,4,5]
+    Points for problem: 10 out of 10
+
+Problem 2c:
+    input: []
+    expected: []
+    actual: []
+    input: [1,2,3]
+    expected: [2,3,4]
+    actual: [2,3,4]
+    input: [2,3,4]
+    expected: [3,4,5]
+    actual: [3,4,5]
+    input: [3,4,5]
+    expected: [4,5,6]
+    actual: [4,5,6]
+    Points for problem: 10 out of 10
+
+Problem 3a:
+    input: []
+    expected: []
+    actual: []
+    input: ["hello","world"]
+    expected: ["hello","world"]
+    actual: ["hello","world"]
+    input: [0,1,2,3,4,5]
+    expected: [0,1,2,3,4,5]
+    actual: [0,1,2,3,4,5]
+    input: [0]
+    expected: [0]
+    actual: [0]
+    input: [true,false,false,true]
+    expected: [true,false,false,true]
+    actual: [true,false,false,true]
+    Points for problem: 10 out of 10
+
+Problem 3b:
+    input: {"hello":1,"world":2}
+    expected: {"hello":1,"world":2}
+    actual: {"hello":1,"world":2}
+    input: {}
+    expected: {}
+    actual: {}
+    input: {"one":1,"two":2,"three":3,"four":4,"five":5}
+    expected: {"one":1,"two":2,"three":3,"four":4,"five":5}
+    actual: {"one":1,"two":2,"three":3,"four":4,"five":5}
+    input: {"age":100,"power":10,"complete":42,"incomplete":17}
+    expected: {"age":100,"power":10,"complete":42,"incomplete":17}
+    actual: {"age":100,"power":10,"complete":42,"incomplete":17}
+    input: {"once":1,"twice":2,"thrice":3}
+    expected: {"once":1,"twice":2,"thrice":3}
+    actual: {"once":1,"twice":2,"thrice":3}
+    Points for problem: 10 out of 10
+
+Problem 3c:
+    input: {"myStr":"hello","myNum":42,"myDict":{"csc600":-1,"is":-2,"fun":3}}
+    expected: {"myStr":"hello","myNum":42,"myDict":{"csc600":-1,"is":-2,"fun":3}}
+    actual: {"myStr":"hello","myNum":42,"myDict":{"csc600":-1,"is":-2,"fun":3}}
+    input: {"myStr":"Joe","myNum":17,"myDict":{"Yes":0,"No":1,"Maybe":2}}
+    expected: {"myStr":"Joe","myNum":17,"myDict":{"Yes":0,"No":1,"Maybe":2}}
+    actual: {"myStr":"Joe","myNum":17,"myDict":{"Yes":0,"No":1,"Maybe":2}}
+    input: {"myStr":"Rigby","myNum":0,"myDict":{"Chairs":1,"Baby Ducks":2,"Ham":3}}
+    expected: {"myStr":"Rigby","myNum":0,"myDict":{"Chairs":1,"Baby Ducks":2,"Ham":3}}
+    actual: {"myStr":"Rigby","myNum":0,"myDict":{"Chairs":1,"Baby Ducks":2,"Ham":3}}
+    input: {"myStr":"Benson","myNum":90,"myDict":{"Misc":240,"Video Games":5,"Hot Dogs":30}}
+    expected: {"myStr":"Benson","myNum":90,"myDict":{"Misc":240,"Video Games":5,"Hot Dogs":30}}
+    actual: {"myStr":"Benson","myNum":90,"myDict":{"Misc":240,"Video Games":5,"Hot Dogs":30}}
+    input: {"myStr":"Skips","myNum":4003,"myDict":{"Age":250,"Power":10,"Hearing":1}}
+    expected: {"myStr":"Skips","myNum":4003,"myDict":{"Age":250,"Power":10,"Hearing":1}}
+    actual: {"myStr":"Skips","myNum":4003,"myDict":{"Age":250,"Power":10,"Hearing":1}}
+    Points for problem: 10 out of 10
+
+Bonus:
+    input: {"myStr":"hello","myNum":42,"myDict":{"csc600":"negative-one","is":"negative-thirty","fun":"negative-one-hundred"}}
+    expected: {"myStr":"hello","myNum":42,"myDict":{"csc600":"negative-one","is":"negative-thirty","fun":"negative-one-hundred"}}
+    actual: {"myStr":"hello","myNum":42,"myDict":{"csc600":"negative-one","is":"negative-thirty","fun":"negative-one-hundred"}}
+    input: {"myStr":"Joe","myNum":17,"myDict":{"Yes":true,"No":false,"Maybe":true}}
+    expected: {"myStr":"Joe","myNum":17,"myDict":{"Yes":true,"No":false,"Maybe":true}}
+    actual: {"myStr":"Joe","myNum":17,"myDict":{"Yes":true,"No":false,"Maybe":true}}
+    input: {"myStr":"Rigby","myNum":0,"myDict":{"Chairs":1,"Baby Ducks":2,"Ham":3}}
+    expected: {"myStr":"Rigby","myNum":0,"myDict":{"Chairs":1,"Baby Ducks":2,"Ham":3}}
+    actual: {"myStr":"Rigby","myNum":0,"myDict":{"Chairs":1,"Baby Ducks":2,"Ham":3}}
+    input: {"myStr":"Mordecai","myNum":37,"myDict":{"Chairs":"Send","Baby Ducks":"Recieve","Ham":"Bones"}}
+    expected: {"myStr":"Mordecai","myNum":37,"myDict":{"Chairs":"Send","Baby Ducks":"Recieve","Ham":"Bones"}}
+    actual: {"myStr":"Mordecai","myNum":37,"myDict":{"Chairs":"Send","Baby Ducks":"Recieve","Ham":"Bones"}}
+    input: {"myStr":"Jose","myNum":100,"myDict":{"Chairs":1,"Baby Ducks":"Animal","Ham":true}}
+    expected: {"myStr":"Jose","myNum":100,"myDict":{"Chairs":1,"Baby Ducks":"Animal","Ham":true}}
+    actual: {"myStr":"Jose","myNum":100,"myDict":{"Chairs":1,"Baby Ducks":"Animal","Ham":true}}
+    Points for problem: 10 out of 10
+
+Total score: 110 of 100, or 110%
